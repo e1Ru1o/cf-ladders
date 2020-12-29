@@ -2,7 +2,7 @@
 .PHONY:	clean
 
 clean: ## Remove all .out files
-	@rm *.out
+	@find . -name '*.out' -delete
 
 view: ## display the Makefile
 	@cat Makefile
