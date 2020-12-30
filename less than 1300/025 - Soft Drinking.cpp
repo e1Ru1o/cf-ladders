@@ -12,18 +12,7 @@ void solve(){
     int n, k, l, c, d, p, nl, np;
     cin >> n >> k >> l >> c >> d >> p >> nl >> np;
 
-    l *= k; c *= d;
-    int cl, cc, cp, ans;
-    ans = cl = cc = cp = 0;
-    while(true){
-        cc += n;
-        cl += n * nl;
-        cp += n * np;
-        if(cl > l || cp > p || cc > c)
-            break;
-        ++ans;
-    }
-    cout << ans << "\n";
+    cout << min({k*l / nl, p / np, c * d}) / n << "\n";
 }
 
 int main() {

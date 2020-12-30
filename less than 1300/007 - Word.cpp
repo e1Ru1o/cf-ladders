@@ -7,6 +7,7 @@ using namespace std;
 typedef long long ll;
 typedef vector<ll> dlist;
 typedef vector<dlist> matrix;
+typedef function<char(char)> func;
 
 void solve(){
     string s;
@@ -14,13 +15,15 @@ void solve(){
 
     int cant = 0;
     for(auto &x:s)
-        cant += (x >= 'a');
+        cant += bool(islower(x));
     int other = s.size() - cant;
     
-    string characters = string(26, ' ');
-    iota(all(characters), "aA"[other > cant]);
-    for(auto &x:s)
-        cout << characters[x - "Aa"[x >= 'a']];
+    func foo[2] = {
+        [](char x){return tolower(x);}, 
+        [](char x){return toupper(x);},
+    };
+    if(other > cant) swap(foo[0], foo[1]);
+    for(auto &x:s) cout << foo[0](x);
     cout << "\n";   
 }
 

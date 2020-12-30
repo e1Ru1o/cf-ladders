@@ -12,7 +12,7 @@ void solve(){
     string s;
     cin >> s;
 
-    if(s[0] >= 'a') s[0] -= 32;
+    s[0] = toupper(s[0]);
     cout << s << "\n";    
 }
 

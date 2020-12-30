@@ -9,7 +9,7 @@ typedef vector<ll> dlist;
 typedef vector<dlist> matrix;
 
 void solve(){
-    int n, m, v, c1, c2;
+    ll n, m, v, c1, c2;
     cin >> n;
     vector<int> pos(n + 1);
     for(int i = 1; i <= n; ++i){

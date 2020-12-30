@@ -15,10 +15,9 @@ void solve(){
     int ans = 0;
     while(n--){
         cin >> s;
-        ans += count(all(s), '+');
-        ans -= count(all(s), '-');
+        ans += (s[1] == '+') - (s[1] == '-');
     }   
-    cout << ans / 2 << "\n";
+    cout << ans << "\n";
 }
 
 int main() {

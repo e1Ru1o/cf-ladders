@@ -9,14 +9,13 @@ typedef vector<ll> dlist;
 typedef vector<dlist> matrix;
 
 void solve(){
-    string a, b, abc = string(26, ' ');
+    string a, b;
     cin >> a >> b;
 
     int ans = 0;
-    iota(all(abc), 'a');
     for(int i = 0; i < a.size(); ++i){
-        a[i] = abc[a[i] - "Aa"[a[i] >= 'a']];
-        b[i] = abc[b[i] - "Aa"[b[i] >= 'a']];
+        a[i] = tolower(a[i]);
+        b[i] = tolower(b[i]);
         if(a[i] != b[i]){
             ans = (b[i] < a[i]) - (a[i] < b[i]);
             break;

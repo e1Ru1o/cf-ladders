@@ -13,11 +13,8 @@ void solve(){
 
     if(n & 1) cout << "-1\n";
     else{
-        vector<int> data(n);
-        iota(all(data), 1);
-        reverse(all(data));
-        for(auto &x:data)
-            cout << x << " \n"[&x == &data.back()];
+        for(int i = n; i > 0; i--)
+            cout << i << " \n"[i == 1];
     }
 }
 
